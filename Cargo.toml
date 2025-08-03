@@ -1,0 +1,13 @@
+[package]
+name = "assault_cube_wall"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+memflow = { version = "0.2", features = ["plugins"] }
+once_cell = "1.21.3"
+windows = { version = "0.52", features = ["Win32_UI_WindowsAndMessaging"] }
+
+
+[target.'cfg(windows)'.dependencies]
+memflow-native = { git = "https://github.com/memflow/memflow-native" }

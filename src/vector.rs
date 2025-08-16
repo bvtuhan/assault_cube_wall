@@ -1,17 +1,16 @@
-use std::ops::Sub;
-
 #[allow(non_camel_case_types)]
-pub struct vec3_t {
+#[derive(Debug, Default, Clone, Copy)]
+pub struct Vec3 {
     pub x: f32,
     pub y: f32,
     pub z: f32,
 }
 
-impl std::ops::Add for vec3_t {
+impl std::ops::Add for Vec3 {
     type Output = Self;
 
     fn add(self, other: Self) -> Self {
-        vec3_t {
+        Vec3 {
             x: self.x + other.x,
             y: self.y + other.y,
             z: self.z + other.z,
@@ -19,11 +18,11 @@ impl std::ops::Add for vec3_t {
     }
 }
 
-impl std::ops::Sub for vec3_t {
+impl std::ops::Sub for Vec3 {
     type Output = Self;
 
     fn sub(self, other: Self) -> Self {
-        vec3_t {
+        Vec3 {
             x: self.x - other.x,
             y: self.y - other.y,
             z: self.z - other.z,
@@ -31,10 +30,10 @@ impl std::ops::Sub for vec3_t {
     }
 }
 
-impl vec3_t {
+impl Vec3 {
 
     pub fn new(x: f32, y: f32, z: f32) -> Self {
-        vec3_t { x, y, z }
+        Vec3 { x, y, z }
     }
 
     /// euklidean distance, a.k.a ||v||, length of the vector
@@ -43,7 +42,7 @@ impl vec3_t {
     }
 
     pub fn delta_to(&self, other: &Self) -> Self {
-        vec3_t {
+        Vec3 {
             x: other.x - self.x,
             y: other.y - self.y,
             z: other.z - self.z,
@@ -70,14 +69,15 @@ impl vec3_t {
 }
 
 #[allow(non_camel_case_types)]
-pub struct vec2_t {
+#[derive(Debug, Default, Clone, Copy)]
+pub struct Vec2 {
     pub x: f32,
     pub y: f32,
 }
 
-impl vec2_t {
+impl Vec2 {
     pub fn new(x: f32, y: f32) -> Self {
-        vec2_t { x, y }
+        Vec2 { x, y }
     }
 
     pub fn length(&self) -> f32 {

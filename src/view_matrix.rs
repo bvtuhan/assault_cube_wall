@@ -1,31 +1,32 @@
-use crate::vector::{vec2_t, vec3_t};
+use crate::vector::{Vec2, Vec3};
 use crate::{SCREEN_HEIGHT, SCREEN_WIDTH};
 
 #[allow(non_camel_case_types)]
-pub struct view_matrix_t {
+#[derive(Debug, Default, Clone, Copy)]
+pub struct ViewMatrix {
     pub m: [[f32; 4]; 4],
 }
 
-impl view_matrix_t {
+impl ViewMatrix {
     pub fn new() -> Self {
-        view_matrix_t {
+        ViewMatrix {
             m: [[0.0; 4]; 4],
         }
     }
 
     pub fn world_to_screen(
         &self,
-         world : &vec3_t, 
-         screen : &mut vec2_t
+         ent_bone_pos : &Vec3, 
+         screen : &mut Vec2
     ) -> bool {
-        let w = self.m[3][0] * world.x + self.m[3][1] * world.y + self.m[3][2] * world.z + self.m[3][3];
+        let w = self.m[3][0] * ent_bone_pos.x + self.m[3][1] * ent_bone_pos.y + self.m[3][2] * ent_bone_pos.z + self.m[3][3];
 
         if w < 0.001 {
             return false; // behind the camera
         }
 
-        screen.x = self.m[0][0] * world.x + self.m[0][1] * world.y + self.m[0][2] * world.z + self.m[0][3];
-        screen.y = self.m[1][0] * world.x + self.m[1][1] * world.y + self.m[1][2] * world.z + self.m[1][3];
+        screen.x = self.m[0][0] * ent_bone_pos.x + self.m[0][1] * ent_bone_pos.y + self.m[0][2] * ent_bone_pos.z + self.m[0][3];
+        screen.y = self.m[1][0] * ent_bone_pos.x + self.m[1][1] * ent_bone_pos.y + self.m[1][2] * ent_bone_pos.z + self.m[1][3];
 
         screen.x /= w;
         screen.y /= w;

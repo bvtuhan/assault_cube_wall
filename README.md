@@ -2,6 +2,22 @@
 
 - Simple ESP written in Rust for Assault Cube. This project helped me to understand how low-level system fundamentals work (such as reading/writing memory and putting pixels on screen) in Rust. It could maybe guide you for your project as well.
 
+## Running the program 
+
+- You have to compile it for 32-Bit Architecture
+- For MSCV toolchain:
+
+```bash
+rustup target add i686-pc-windows-msvc
+cargo run --target=i686-pc-windows-msvc
+```
+
+- If you are using GNU toolchain:
+
+```bash
+rustup target add i686-pc-windows-gnu
+cargo run --target=i686-pc-windows-gnu
+```
 
 ## Sources 
 

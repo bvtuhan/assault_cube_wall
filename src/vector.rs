@@ -1,5 +1,8 @@
+use memflow::prelude::Pod;
+
 #[allow(non_camel_case_types)]
-#[derive(Debug, Default, Clone, Copy)]
+#[repr(C)]
+#[derive(Debug, Default, Clone, Copy, Pod)]
 pub struct Vec3 {
     pub x: f32,
     pub y: f32,
@@ -69,7 +72,8 @@ impl Vec3 {
 }
 
 #[allow(non_camel_case_types)]
-#[derive(Debug, Default, Clone, Copy)]
+#[repr(C)]
+#[derive(Debug, Default, Clone, Copy, Pod)]
 pub struct Vec2 {
     pub x: f32,
     pub y: f32,

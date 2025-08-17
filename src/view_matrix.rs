@@ -1,8 +1,11 @@
 use crate::vector::{Vec2, Vec3};
 use crate::{SCREEN_HEIGHT, SCREEN_WIDTH};
+use memflow::prelude::Pod;
+
 
 #[allow(non_camel_case_types)]
-#[derive(Debug, Default, Clone, Copy)]
+#[repr(C)]
+#[derive(Debug, Default, Clone, Copy, Pod)]
 pub struct ViewMatrix {
     pub m: [[f32; 4]; 4],
 }

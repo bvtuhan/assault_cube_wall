@@ -1,15 +1,19 @@
 // hardcoded pointer addresses since they are static
 pub const ENTITY_LIST_POINTER : usize =  0x591FCC;
-pub const VIEW_MATRIX_POINTER : usize = 0x57DFD8;
+pub const VIEW_MATRIX_POINTER : usize = 0x57E010;
 
 pub mod module_base {
     pub const LOCAL_PLAYER_POINTER_OFFSET : usize = 0x17E0A8;
+    pub const ENTITY_LIST_POINTER_OFFSET : usize = 0x191FCC;
 }
 
 pub mod entity {
     pub const HEALTH_OFFSET : usize = 0xEC; // int 
 
     // Vector3
+    pub const HEAD_ENT_COORDINATES_OFFSET : usize = 0x4; // Vector3
+    
+    // or for each 
     pub const POS_X_OFFSET : usize = 0x4; // float
     pub const POS_Y_OFFSET : usize = 0x8; // float
     pub const POS_Z_OFFSET_HEAD : usize = 0xC; // float

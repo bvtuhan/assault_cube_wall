@@ -22,14 +22,14 @@ impl ViewMatrix {
          ent_bone_pos : &Vec3, 
          screen : &mut Vec2
     ) -> bool {
-        let w = self.m[3][0] * ent_bone_pos.x + self.m[3][1] * ent_bone_pos.y + self.m[3][2] * ent_bone_pos.z + self.m[3][3];
+        let w = self.m[0][3] * ent_bone_pos.x + self.m[1][3] * ent_bone_pos.y + self.m[2][3] * ent_bone_pos.z + self.m[3][3];
 
-        if w < 0.001 {
+        if w <= 0.001 {
             return false; // behind the camera
         }
 
-        screen.x = self.m[0][0] * ent_bone_pos.x + self.m[0][1] * ent_bone_pos.y + self.m[0][2] * ent_bone_pos.z + self.m[0][3];
-        screen.y = self.m[1][0] * ent_bone_pos.x + self.m[1][1] * ent_bone_pos.y + self.m[1][2] * ent_bone_pos.z + self.m[1][3];
+        screen.x = self.m[0][0] * ent_bone_pos.x + self.m[1][0] * ent_bone_pos.y + self.m[2][0] * ent_bone_pos.z + self.m[3][0];
+        screen.y = self.m[0][1] * ent_bone_pos.x + self.m[1][1] * ent_bone_pos.y + self.m[2][1] * ent_bone_pos.z + self.m[3][1];
 
         screen.x /= w;
         screen.y /= w;

@@ -1,6 +1,6 @@
 // hardcoded pointer addresses since they are static
 pub const ENTITY_LIST_POINTER : usize =  0x591FCC;
-pub const VIEW_MATRIX_POINTER : usize = 0x57E010;
+pub const VIEW_MATRIX_POINTER : usize = 0x57DFD0; // 0x57E010;
 
 pub mod module_base {
     pub const LOCAL_PLAYER_POINTER_OFFSET : usize = 0x17E0A8;

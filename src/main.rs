@@ -140,6 +140,7 @@ fn main() {
 
                         {
                             let frame = pixels.frame_mut();
+                            frame.fill(0); 
 
                             for i in 0..32 {
                                 let entity_base_pointer = match process.read::<usize>((entity_list_ptr + (i * 4)).into()) {
@@ -189,7 +190,7 @@ fn main() {
                                 let left = x as i32 - 24 / 2;
                                 let right = x as i32 + 24 / 2;
                                 let top = y as i32 - 16 / 2;
-                                let bottom = y as i32;
+                                let bottom = y as i32 + 128;
                                 let color = [255, 0, 0, 255]; // Red RGBA
 
                                 rect(frame, *SCREEN_WIDTH as i32, left, top, right, bottom, &color);

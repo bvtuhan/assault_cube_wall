@@ -8,6 +8,7 @@ debug_print = "1.0.0"
 memflow = { version = "0.2", features = ["plugins"] }
 once_cell = "1.21.3"
 pixels = "0.15.0"
+pixels_primitives = "0.1.1"
 windows = { version = "0.52", features = ["Win32_UI_WindowsAndMessaging"] }
 winit = "0.29"
 winit_input_helper = "0.15"

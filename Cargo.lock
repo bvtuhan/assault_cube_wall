@@ -198,6 +198,7 @@ dependencies = [
  "memflow-native",
  "once_cell",
  "pixels",
+ "pixels_primitives",
  "windows 0.52.0",
  "winit",
  "winit_input_helper",
@@ -1739,6 +1740,12 @@ dependencies = [
  "ultraviolet",
  "wgpu",
 ]
+
+[[package]]
+name = "pixels_primitives"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5324d8514c0601e91ff97b965286e302f28ec13004f0d3e2fecc8e08af3bcbbf"
 
 [[package]]
 name = "pkg-config"

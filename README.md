@@ -1,6 +1,8 @@
 # Assault Cube Wall
 
-- Simple ESP written in Rust for Assault Cube. This project helped me to understand how low-level system fundamentals work (such as reading/writing memory and putting pixels on screen) in Rust. It could maybe guide you for your project as well.
+- Simple ESP (not the best) written in Rust for Assault Cube. This project helped me to understand how low-level system fundamentals work (such as reading/writing memory and putting pixels on screen) in Rust. It could maybe guide you for your project as well.
+
+![illustration](./screenshots/1.PNG)
 
 ## Compiling the program 
 

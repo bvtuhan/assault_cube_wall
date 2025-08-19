@@ -1,19 +1,19 @@
 # Assault Cube Wall
 
-- Simple ESP (not the best) written in Rust for Assault Cube. This project helped me to understand how low-level system fundamentals work (such as reading/writing memory and putting pixels on screen) in Rust. It could maybe guide you for your project as well.
+Simple ESP (not the best) written in Rust for Assault Cube. This project helped me to understand how low-level system fundamentals work (such as reading/writing memory and putting pixels on screen) in Rust. It could maybe guide you for your project as well.
 
 ![illustration](./screenshots/1.PNG)
 
 ## Compiling the program 
 
-- You have to compile it for the 32-bit architecture. For MSCV toolchain:
+You have to compile it for the 32-bit architecture. For MSCV toolchain:
 
 ```bash
 rustup target add i686-pc-windows-msvc
 cargo build --target=i686-pc-windows-msvc --release # or just cargo run
 ```
 
-- If you are using GNU toolchain:
+If you are using GNU toolchain:
 
 ```bash
 rustup target add i686-pc-windows-gnu
@@ -22,7 +22,7 @@ cargo build --target=i686-pc-windows-gnu --release
 
 ## Configuration 
 
-- Positioning of the red boxes is not the finest, but configurable based on your preference:
+Positioning of the red boxes is not the finest, but configurable based on your preference:
  
 ```rust
 // main.rs
